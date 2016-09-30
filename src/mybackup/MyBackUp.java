@@ -13,7 +13,7 @@ public class MyBackUp {
     /**
      * @param args the command line arguments
      */
-    static String[][] m = new String [5][3];
+    static String[] m = new String [5];
     static Scanner scn;
 
  
@@ -32,17 +32,17 @@ public class MyBackUp {
     private static void readFile(){
         while (scn.hasNext()){
           for(int row=0;row<m.length;row++){
-              for(int col=0;col<m[row].length;col++){
-              m[row][col] = scn.next();
-              }
+              
+              m[row] = scn.next();
+              
                         }  
         }
     }
     private static void outFile(){
         for(int row=0;row<m.length;row++){
-              for(int col=0;col<m[row].length;col++){
-              System.out.print(m[row][col]);
-              }
+              
+              System.out.print(m[row]);
+              
               System.out.println();
           }
     }
