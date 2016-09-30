@@ -13,11 +13,11 @@ public class MyBackUp {
     /**
      * @param args the command line arguments
      */
-    static String[] m = String [5];
+    static String[][] m = new String [5][3];
     static Scanner scn;
 
  
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         openFile();
         readFile();
         outFile();
@@ -25,7 +25,7 @@ public class MyBackUp {
     
     private static void openFile(){
         try{
-        scn = new Scanner (new File(D:/1/test.txt));
+        scn = new Scanner (new File("d:/1/test.txt"));
         }catch(Exception e) {JOptionPane.showMessageDialog(null, "Файл не найден");}
     }
     
@@ -35,11 +35,16 @@ public class MyBackUp {
               for(int col=0;col<m[row].length;col++){
               m[row][col] = scn.next();
               }
-          }  
+                        }  
         }
     }
     private static void outFile(){
-        
+        for(int row=0;row<m.length;row++){
+              for(int col=0;col<m[row].length;col++){
+              System.out.print(m[row][col]);
+              }
+              System.out.println();
+          }
     }
         
 }
